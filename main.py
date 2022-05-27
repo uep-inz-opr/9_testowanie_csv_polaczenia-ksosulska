@@ -1,3 +1,7 @@
+import unittest
+from unittest import TestCase
+import csv
+
 class MenadzerPolaczen:
     def __init__(self, filename):
         self.filename=filename
@@ -18,7 +22,7 @@ class MenadzerPolaczen:
 
     def pobierz_najczesciej_dzwoniacego(self):
         return max(self.data_dict.items(), key=lambda x:x[1])
-
+        
 class SprawdzDzwoniacegoTest(TestCase):
     def test_czy_abonent_najczesciej_dzwoniacy_rozpoznany_poprawnie(self):
         mp=MenadzerPolaczen("phoneCalls.csv")
